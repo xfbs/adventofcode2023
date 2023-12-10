@@ -1,0 +1,9 @@
+[package]
+name = "day02"
+edition.workspace = true
+version.workspace = true
+authors.workspace = true
+
+[dependencies]
+strum = { version = "0.25.0", features = ["derive"] }
+thiserror = "1.0.50"
