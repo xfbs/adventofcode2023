@@ -6,3 +6,8 @@ members = ["solutions/*"]
 version = "0.1.0"
 authors = ["Patrick Elsen <pelsen@xfbs.net>"]
 edition = "2021"
+
+[workspace.dependencies]
+strum = { version = "0.25.0", features = ["derive"] }
+thiserror = "1.0.50"
+itertools = "0.12.0"
