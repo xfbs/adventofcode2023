@@ -14,6 +14,14 @@ You can run the unit tests simply by running this in the repository root:
 cargo test
 ```
 
+You can run individual solutions simply by running the specific crate:
+
+```
+cargo run -p day01
+```
+
+Usually, every solution requires some input which is passed on standard input.
+
 ## Progress
 
 | Problem | Part I | Part II |
