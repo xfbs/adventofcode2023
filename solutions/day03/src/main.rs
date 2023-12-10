@@ -84,6 +84,37 @@ impl Schematic {
             .copied()
             .collect()
     }
+
+    fn gear_ratios(&self) -> Vec<u64> {
+        let mut ratios = vec![];
+        for (pos, entity) in self.field.iter() {
+            if *entity != Entity::Symbol('*') {
+                continue;
+            }
+
+            let touching: BTreeSet<usize> = pos
+                .touching()
+                .filter_map(|pos| match self.get(pos) {
+                    Some(Entity::Number(offset)) => Some(offset),
+                    _ => None,
+                })
+                .collect();
+
+            if touching.len() == 2 {
+                let ratio = touching
+                    .iter()
+                    .filter_map(|o| self.numbers.get(*o).copied())
+                    .product();
+                ratios.push(ratio);
+            }
+        }
+
+        ratios
+    }
+
+    fn gear_ratio_sums(&self) -> u64 {
+        self.gear_ratios().into_iter().sum()
+    }
 }
 
 impl FromStr for Schematic {
@@ -139,13 +170,14 @@ fn main() {
     let schematic: Schematic = input.parse().unwrap();
     let sum: u64 = schematic.part_numbers().into_iter().sum();
     println!("{sum}");
+    let sum = schematic.gear_ratio_sums();
+    println!("gear ratio sum: {sum}");
 }
 
 #[test]
 fn can_parse() {
     let input = include_str!("input1.txt");
     let schematic: Schematic = input.parse().unwrap();
-    use Entity::*;
 
     println!("{schematic:?}");
     assert_eq!(
@@ -176,8 +208,14 @@ fn can_parse() {
 fn can_solve() {
     let input = include_str!("input1.txt");
     let schematic: Schematic = input.parse().unwrap();
-    use Entity::*;
-
     let numbers = schematic.part_numbers();
     assert_eq!(numbers, [467, 35, 633, 617, 592, 755, 664, 598]);
+}
+
+#[test]
+fn can_solve2() {
+    let input = include_str!("input1.txt");
+    let schematic: Schematic = input.parse().unwrap();
+    assert_eq!(schematic.gear_ratios(), [16345, 451490]);
+    assert_eq!(schematic.gear_ratio_sums(), 467835);
 }
