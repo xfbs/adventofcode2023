@@ -20,7 +20,7 @@ cargo test
 | --- | --- | --- |
 | [Day 1: Trebuchet?!][day01] | ✔️ | ✔️ |
 | [Day 2: Cube Conundrum][day02] | ✔️ | ❌ |
-| [Day 3: Gear Ratios][day03] | ✔️ | ❌ |
+| [Day 3: Gear Ratios][day03] | ✔️ | ✔️  |
 | [Day 4: Scratchcards][day04] | ❌ | ❌ |
 | [Day 5: If You Give A Seed A Fertilizer][day05] | ❌ | ❌ |
 | [Day 6: Wait For It][day06] | ❌ | ❌ |
