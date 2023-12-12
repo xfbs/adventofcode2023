@@ -2,19 +2,21 @@
 
 This repository contains my solutions to Advent of Code 2023. 
 
+I'm publishing this code to allow you to compare your solution to mine. The
+goal is to have fun and challenge yourself!
+
 ## Running
 
-Every crate contains unit tests that work at all times, however I do not
-make sure that the code is clean or easily switchable between parts one
-and two of every problem.
+Every crate contains unit tests that work. However I do not make sure that the
+code is clean, or easily switchable between parts one and two of every problem.
 
-You can run the unit tests simply by running this in the repository root:
+You can run the unit tests with Cargo by running this in the repository root:
 
 ```
 cargo test
 ```
 
-You can run individual solutions simply by running the specific crate:
+You can run individual solutions by telling Cargo to build and run the crate:
 
 ```
 cargo run -p day01
@@ -36,19 +38,22 @@ Usually, every solution requires some input which is passed on standard input.
 | [Day 8: Haunted Wasteland][day08] | ❌ | ❌ |
 | [Day 9: Mirage Maintenance][day09] | ❌ | ❌ |
 | [Day 10: Pipe Maze][day10] | ❌ | ❌ |
+| [Day 11: Cosmic Expansion][day11] | ❌ | ❌ |
+| [Day 12: Hot Springs][day12] | ❌ | ❌ |
 
-[day01]: /solutions/day01
-[day02]: /solutions/day02
-[day03]: /solutions/day03
-[day04]: /solutions/day04
-[day05]: /solutions/day05
-[day06]: /solutions/day06
-[day07]: /solutions/day07
-[day08]: /solutions/day08
-[day09]: /solutions/day09
-[day10]: /solutions/day10
+[day01]: https://adventofcode.com/2023/day/1
+[day02]: https://adventofcode.com/2023/day/2
+[day03]: https://adventofcode.com/2023/day/3
+[day04]: https://adventofcode.com/2023/day/4
+[day05]: https://adventofcode.com/2023/day/5
+[day06]: https://adventofcode.com/2023/day/6
+[day07]: https://adventofcode.com/2023/day/7
+[day08]: https://adventofcode.com/2023/day/8
+[day09]: https://adventofcode.com/2023/day/9
+[day10]: https://adventofcode.com/2023/day/10
+[day11]: https://adventofcode.com/2023/day/11
+[day12]: https://adventofcode.com/2023/day/12
 
 ## License
 
 MIT.
-
