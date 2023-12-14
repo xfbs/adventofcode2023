@@ -1,4 +1,8 @@
-use std::{num::ParseIntError, str::FromStr, io::{stdin, BufReader, BufRead}};
+use std::{
+    io::{stdin, BufRead, BufReader},
+    num::ParseIntError,
+    str::FromStr,
+};
 
 pub struct History(Vec<i64>);
 
@@ -6,7 +10,12 @@ impl FromStr for History {
     type Err = ParseIntError;
 
     fn from_str(input: &str) -> Result<Self, Self::Err> {
-        Ok(History(input.split_whitespace().map(|line| line.parse()).collect::<Result<_, _>>()?))
+        Ok(History(
+            input
+                .split_whitespace()
+                .map(|line| line.parse())
+                .collect::<Result<_, _>>()?,
+        ))
     }
 }
 
@@ -19,8 +28,22 @@ impl History {
         }
     }
 
+    fn prev_value(&self) -> i64 {
+        if self.0.iter().all(|i| *i == 0) {
+            0
+        } else {
+            self.0.first().unwrap() - self.derivative().prev_value()
+        }
+    }
+
     fn derivative(&self) -> Self {
-        Self(self.0.iter().zip(self.0.iter().skip(1)).map(|(prev, next)| next - prev).collect())
+        Self(
+            self.0
+                .iter()
+                .zip(self.0.iter().skip(1))
+                .map(|(prev, next)| next - prev)
+                .collect(),
+        )
     }
 }
 
@@ -33,17 +56,34 @@ fn can_parse() {
 
 #[test]
 fn can_solve() {
-    let histories: Vec<History> = include_str!("../sample.txt").lines().map(|line| line.parse().unwrap()).collect();
+    let histories: Vec<History> = include_str!("../sample.txt")
+        .lines()
+        .map(|line| line.parse().unwrap())
+        .collect();
     assert_eq!(histories[0].next_value(), 18);
     assert_eq!(histories[1].next_value(), 28);
     assert_eq!(histories[2].next_value(), 68);
 }
 
+#[test]
+fn can_solve2() {
+    let histories: Vec<History> = include_str!("../sample.txt")
+        .lines()
+        .map(|line| line.parse().unwrap())
+        .collect();
+    assert_eq!(histories[2].prev_value(), 5);
+}
+
 fn main() {
     let input = BufReader::new(stdin());
-    let sum: i64 = input.lines().map(|line| {
-        let history: History = line.unwrap().parse().unwrap();
-        history.next_value()
-    }).sum();
-    println!("sum {sum}");
+    let histories: Vec<History> = input
+        .lines()
+        .map(|line| line.unwrap().parse().unwrap())
+        .collect();
+
+    let sum_next: i64 = histories.iter().map(|h| h.next_value()).sum();
+    println!("sum_next {sum_next}");
+
+    let sum_prev: i64 = histories.iter().map(|h| h.prev_value()).sum();
+    println!("sum_prev {sum_prev}");
 }
