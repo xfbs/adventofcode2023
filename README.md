@@ -24,19 +24,6 @@ goal is to have fun and challenge yourself!
 | [Day 13: Point of Incidence][day13] | ❌ | ❌ |
 | [Day 14: Parabolic Reflector Dish][day14] | ❌ | ❌ |
 
-[day01]: https://adventofcode.com/2023/day/1
-[day02]: https://adventofcode.com/2023/day/2
-[day03]: https://adventofcode.com/2023/day/3
-[day04]: https://adventofcode.com/2023/day/4
-[day05]: https://adventofcode.com/2023/day/5
-[day06]: https://adventofcode.com/2023/day/6
-[day07]: https://adventofcode.com/2023/day/7
-[day08]: https://adventofcode.com/2023/day/8
-[day09]: https://adventofcode.com/2023/day/9
-[day10]: https://adventofcode.com/2023/day/10
-[day11]: https://adventofcode.com/2023/day/11
-[day12]: https://adventofcode.com/2023/day/12
-
 ## Running
 
 Every crate contains unit tests that work. However I do not make sure that the
@@ -59,3 +46,18 @@ Usually, every solution requires some input which is passed on standard input.
 ## License
 
 MIT.
+
+[day01]: https://adventofcode.com/2023/day/1
+[day02]: https://adventofcode.com/2023/day/2
+[day03]: https://adventofcode.com/2023/day/3
+[day04]: https://adventofcode.com/2023/day/4
+[day05]: https://adventofcode.com/2023/day/5
+[day06]: https://adventofcode.com/2023/day/6
+[day07]: https://adventofcode.com/2023/day/7
+[day08]: https://adventofcode.com/2023/day/8
+[day09]: https://adventofcode.com/2023/day/9
+[day10]: https://adventofcode.com/2023/day/10
+[day11]: https://adventofcode.com/2023/day/11
+[day12]: https://adventofcode.com/2023/day/12
+[day13]: https://adventofcode.com/2023/day/13
+[day14]: https://adventofcode.com/2023/day/14
