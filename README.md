@@ -35,7 +35,7 @@ Usually, every solution requires some input which is passed on standard input.
 | [Day 5: If You Give A Seed A Fertilizer][day05] | ✔️  | ❌ |
 | [Day 6: Wait For It][day06] | ❌ | ❌ |
 | [Day 7: Camel Cards][day07] | ❌ | ❌ |
-| [Day 8: Haunted Wasteland][day08] | ❌ | ❌ |
+| [Day 8: Haunted Wasteland][day08] | ✔️ | ❌ |
 | [Day 9: Mirage Maintenance][day09] | ✔️  | ✔️ |
 | [Day 10: Pipe Maze][day10] | ❌ | ❌ |
 | [Day 11: Cosmic Expansion][day11] | ❌ | ❌ |
